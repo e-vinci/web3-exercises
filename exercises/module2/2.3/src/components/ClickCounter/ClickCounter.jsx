@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./ClickCounter.css";
-import useLocalStorage from "hooks/useLocalStorage";
+import useStateLocalStorage from "hooks/useStateLocalStorage";
 
 const ClickCounter = ({
   title,
   on10ClickMessage = "Master !",
   onMouseOverMessage = "Click !",
 }) => {
-  const [count, setCount] = useLocalStorage("count", 0);
+  const [count, setCount] = useStateLocalStorage("count", 0);
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -18,7 +18,6 @@ const ClickCounter = ({
         onClick={() => {
           const newCount = count + 1;
           setCount(newCount);
-          localStorage.setItem("count", JSON.stringify(newCount));
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
