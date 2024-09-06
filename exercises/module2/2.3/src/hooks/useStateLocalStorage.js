@@ -10,7 +10,7 @@ const fetchValue = (key, defaultValue) => {
   return serializedValue ? JSON.parse(serializedValue) : defaultValue;
 };
 
-const useLocalStorage = (key, initialValue) => {
+const useStateLocalStorage = (key, initialValue) => {
   const currentValue = fetchValue(key, initialValue);
   const [stateValue, stateSetter] = useState(currentValue);
 
@@ -22,4 +22,4 @@ const useLocalStorage = (key, initialValue) => {
   return [stateValue, persistentSetter];
 };
 
-export default useLocalStorage;
+export default useStateLocalStorage;

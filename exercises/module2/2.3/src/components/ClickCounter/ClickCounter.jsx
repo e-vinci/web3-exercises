@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./ClickCounter.css";
-import useLocalStorage from "hooks/useLocalStorage";
+import useStateLocalStorage from "hooks/useStateLocalStorage";
 
 const ClickCounter = ({
   title,
   on10ClickMessage = "Master !",
   onMouseOverMessage = "Click !",
 }) => {
-  const [count, setCount] = useLocalStorage("count", 0);
+  const [count, setCount] = useStateLocalStorage("count", 0);
   const [isHovered, setIsHovered] = useState(false);
 
   return (
