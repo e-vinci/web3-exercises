@@ -18,7 +18,6 @@ const ClickCounter = ({
         onClick={() => {
           const newCount = count + 1;
           setCount(newCount);
-          localStorage.setItem("count", JSON.stringify(newCount));
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
