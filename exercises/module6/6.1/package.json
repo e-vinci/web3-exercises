@@ -1,0 +1,14 @@
+{
+    "name": "module6",
+    "version": "1.0.0",
+    "description": "",
+    "main": "mongo.js",
+    "author": "",
+    "license": "ISC",
+    "scripts": {
+        "start": "node mongo.js"
+    },
+    "dependencies": {
+        "mongoose": "^8.7.0"
+    }
+}
