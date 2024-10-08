@@ -11,11 +11,10 @@ const ProviderWrapper = ({ children }) => {
     const opinionToUpdate = newSortedOpinions.find(
       (opinion) => opinion.id === opinionId
     );
-    if (!opinionToUpdate) return undefined;
+    if (!opinionToUpdate) return;
 
     opinionToUpdate.score += 1;
-    newSortedOpinions.sort((a, b) => b.score - a.score);
-    setSortedOpinions(newSortedOpinions);
+    sortOpinions(newSortedOpinions);
   };
 
   const createOpinion = (opinion) => {
@@ -25,7 +24,11 @@ const ProviderWrapper = ({ children }) => {
       score: 1,
     });
 
-    newSortedOpinions.sort((a, b) => b.score - a.score);
+    sortOpinions(newSortedOpinions);
+  };
+
+  const sortOpinions = (opinions) => {
+    const newSortedOpinions = [...opinions].sort((a, b) => b.score - a.score);
     setSortedOpinions(newSortedOpinions);
   };
 
