@@ -1,8 +1,8 @@
 @hostname = localhost
 @port = 3001
 @host = http://{{hostname}}:{{port}}
-@personId = 3
-@missingPersonId = 5
+@personId = 670544052da7e1771755f5b2
+@missingPersonId = 670544052da7e1771755f5a1
 
 ### Get All
 GET {{host}}/persons HTTP/1.1
