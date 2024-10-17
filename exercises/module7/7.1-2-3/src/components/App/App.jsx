@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const defaultMovies = [
   {
+    id: 1,
     title: "Shang-Chi and the Legend of the Ten Rings",
     director: "Destin Daniel Cretton",
     duration: 132,
@@ -17,6 +18,7 @@ const defaultMovies = [
     budget: 150,
   },
   {
+    id: 2,
     title: "The Matrix",
     director: "Lana Wachowski, Lilly Wachowski",
     duration: 136,
@@ -27,6 +29,7 @@ const defaultMovies = [
     budget: 63,
   },
   {
+    id: 3,
     title: "Summer Wars",
     director: "Mamoru Hosoda",
     duration: 114,
@@ -37,6 +40,7 @@ const defaultMovies = [
     budget: 18.7,
   },
   {
+    id: 4,
     title: "The Meyerowitz Stories",
     director: "Noah Baumbach",
     duration: 112,
@@ -46,6 +50,7 @@ const defaultMovies = [
       "An estranged family gathers together in New York City for an event celebrating the artistic work of their father.",
   },
   {
+    id: 5,
     title: "her",
     director: "Spike Jonze",
     duration: 126,
@@ -63,6 +68,8 @@ const App = () => {
   const navigate = useNavigate();
 
   const onMovieAdded = (movie) => {
+    const newId = Math.max(...movies.map((movie) => movie.id)) + 1;
+    movie.id = newId;
     setMovies([...movies, movie]);
     navigate("/movies");
   };
