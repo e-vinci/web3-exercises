@@ -2,10 +2,10 @@ import "./Header.css";
 
 const Header = ({urlLogo, children}) => {
   return (
-    <footer className="header">
+    <header className="header">
       <img src={urlLogo} alt="logo" className="logo" />
       <div>{children}</div>
-    </footer>
+    </header>
   );
 };
 
